@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Matteo Visconti dOC <mvdoc.gr@dartmouth.edu>
+MAINTAINER Matteo Visconti di Oleggio Castello <mvdoc.gr@dartmouth.edu>
 
 RUN apt-get update && apt-get install -y \
       build-essential \
@@ -34,7 +34,7 @@ RUN git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose $OPENPOSE
     sync
 
 RUN sed -i 's/sudo -H //g;s/sudo //g' ubuntu/install_cmake.sh && \
-    bash ubuntu/install_cmake.sh &&
+    bash ubuntu/install_cmake.sh && \
     rm -rf /var/lib/apt/lists/* && \
     sync
 
